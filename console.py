@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """ Program called console.py that
-contains the entry point of the command interpreter 
+contains the entry point of the command interpreter
 """
 
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
     """ Class definition  """
-    
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     def do_quit(self, arg):
         """ Use quit to exit of the console """
@@ -30,25 +30,20 @@ class HBNBCommand(cmd.Cmd):
         """ Creates a new instance of BaseModel, saves it (to the JSON file)
         and prints the id. Ex: $ create BaseModel """
 
-    
     def do_show(self, args):
         """ Prints the string representation of
         an instance based on the class name and id """
 
-    
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id """
 
-    
     def do_all(self, args):
         """ Prints all string representation of
         all instances based or not on the class name """
 
-    
     def do_update(self, args):
         """ Updates an instance based on the class
         name and id by adding or updating attribute """
-        
 
 
 if __name__ == '__main__':
