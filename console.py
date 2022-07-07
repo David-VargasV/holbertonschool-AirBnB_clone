@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_help(self, arg):
         """ Shows the commands of the console """
-        cmd.Cmd.do_help(self, args)
+        cmd.Cmd.do_help(self, arg)
 
     def emptyline(self):
         """ Empty line does not execute anything """
@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
 
         if len(tokens) == 0:
             print("** class name missing **")
-        elif tokens[0] not in classtype:
+        elif tokens[0] not in self.__classes:
             print("** class doesn't exist **")
         elif len(tokens) == 1:
             print("** instance id missing **")
@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
         """ Prints all string representation of all
         instances based or not on the class name"""
         tokens = arg.split()
-        if len(tokens) > 0 and tokens[0] not in classtype:
+        if len(tokens) > 0 and tokens[0] not in self.__classes:
             print("** class doesn't exist **")
         else:
             new_list = []
