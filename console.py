@@ -141,7 +141,11 @@ class HBNBCommand(cmd.Cmd):
             print(new_list)
 
     def do_update(self, line):
-        """Update if given exact object, exact attribute"""
+        """
+        Updates an instance based on the class name and id by
+        adding or updating attribute:
+        Usage: update <class name> <id> <attribute name> "<attribute value>"
+        """
         args = parse(line)
         if len(args) >= 4:
             key = "{}.{}".format(args[0], args[1])
@@ -164,9 +168,11 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** value missing **")
 
-    def parse(line):
-        """Helper method to parse user typed input"""
-        return tuple(line.split())
+def parse(line):
+    """
+    Helper method to parse user typed input
+    """
+    return tuple(line.split())
 
 
 if __name__ == '__main__':
