@@ -20,6 +20,7 @@ classtype = {
     "Review": Review,
 }
 
+
 class FileStorage:
     """ Define the class FileStorage """
     __file_path = "file.json"
@@ -41,7 +42,7 @@ class FileStorage:
             dict.update({key: value.to_dict()})
         with open(FileStorage.__file_path, "w") as file:
             json.dump(dict, file)
-    
+
     def reload(self):
         """ Deserializes the JSON file to __objects """
         try:

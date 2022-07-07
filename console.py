@@ -140,13 +140,13 @@ class HBNBCommand(cmd.Cmd):
                     new_list.append(obj.__str__())
             print(new_list)
 
-    def do_update(self, line):
+    def do_update(self, arg):
         """
         Updates an instance based on the class name and id by
         adding or updating attribute:
         Usage: update <class name> <id> <attribute name> "<attribute value>"
         """
-        args = parse(line)
+        args = arg.split()
         if len(args) >= 4:
             key = "{}.{}".format(args[0], args[1])
             cast = type(eval(args[3]))
@@ -167,13 +167,6 @@ class HBNBCommand(cmd.Cmd):
             print("** attribute name missing **")
         else:
             print("** value missing **")
-
-
-def parse(line):
-    """
-    Helper method to parse user typed input
-    """
-    return tuple(line.split())
 
 
 if __name__ == '__main__':
