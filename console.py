@@ -168,6 +168,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** value missing **")
 
+
 def parse(line):
     """
     Helper method to parse user typed input
